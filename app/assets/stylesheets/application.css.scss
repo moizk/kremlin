@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+@import "font-awesome";
+
+
+body { background-color: #ECEEF1; }
+
+div.container {
+	width: 100%;
+	margin-top: 20px;
+}
+
+div.smallercontainer {
+	background-color: #fff;
+	padding: 10px;
+}
+
+div.formcontainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 320px;
+	background-color: #fff;
+	padding: 25px;
+}
+
+div.navigation {
+	background: #f44a56;
+	height: 130px;
+	width: 100%;
+	div.navinner {
+		img {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.icon-home {
+	line-height: 55px;
+	margin-left: 5px;
+}
+
+.icon-home:hover {
+	text-decoration: none;
+}
+
+div.navigation h1:hover {
+	color: #FFFE8A;
+}
+
+.icon-white {
+	color: white;
+}
+
+.page-header {
+  padding-bottom: 9px;
+  margin: 20px 0 30px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+
+.img-circle {
+	-webkit-border-radius: 500px;
+	   -moz-border-radius: 500px;
+	        border-radius: 500px;
+}
+
+div.alert-success {
+	background-color: #2BCDA9;
+	color: #FFF;
+	padding: 25px;
+	text-align: center;
+	border-radius: 3px;
+	-webkit-transition: all .5s ease-in-out;
+	   -moz-transition: all .5s ease-in-out;
+	        transition: all .5s ease-in-out;
+}
+
+div.alert-error {
+	background-color: #f44a56;
+	color: #FFF;
+	padding: 25px;
+	text-align: center;
+	border-radius: 3px;
+	-webkit-transition: all .5s ease-in-out;
+	   -moz-transition: all .5s ease-in-out;
+	        transition: all .5s ease-in-out;
+}
+
