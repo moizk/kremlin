@@ -1,7 +1,7 @@
 Kremlin::Application.routes.draw do
 
 
-    as :user do
+  as :user do
     get '/register', to: 'devise/registrations#new',via: :get, as: :register
     get '/login', to: 'devise/sessions#new', via: :get, as: :login
     get '/logout', to: 'devise/sessions#destroy', via: :delete, as: :logout
@@ -16,9 +16,12 @@ Kremlin::Application.routes.draw do
   end
 
   resources :project_entries
+  resources :projects
 
-  resources :projects do
-    resources :project_entries
+  resources :users do
+    resources :projects do
+      resources :project_entries
+    end
   end
 
   root to: "projects#index"

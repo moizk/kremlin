@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
+    @project_entries = ProjectEntry.find(:all)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,6 +27,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   # GET /projects/new.json
   def new
+    @user = User.find(params[:user_id])
     @project = Project.new
 
     respond_to do |format|
@@ -36,17 +38,20 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @user = User.find(params[:user_id])
     @project = Project.find(params[:id])
   end
 
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(params[:project])
+    @user = User.find(params[:user_id])
+    @project = @user.projects.new(params[:project])
+
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.html { redirect_to projects_path, notice: 'Project was successfully created.' }
         format.json { render json: @project, status: :created, location: @project }
       else
         format.html { render action: "new" }
@@ -58,11 +63,12 @@ class ProjectsController < ApplicationController
   # PUT /projects/1
   # PUT /projects/1.json
   def update
+    @user = User.find(params[:user_id])
     @project = Project.find(params[:id])
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to @user, notice: 'Project was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -1,6 +1,6 @@
 <div class="smallercontainer">
 <div class="page-header">
-  <%= link_to project_project_entries_path(@project), :method => :post, class: "btn btn-black pull-right"  do%><i class="icon-plus icon-2x"></i> <% end %>
+  <%= link_to user_project_project_entries_path(current_user, @project), :method => :post, class: "btn btn-black pull-right"  do %><i class="icon-plus icon-2x"></i> <% end %>
   <h1><%= @project.name %></h1>
   <%= link_to 'Website', @project.website, class: "btn btn-mini" %>
   <%= link_to 'Git Repo', @project.git_repo, class: "btn btn-mini" %>
@@ -22,7 +22,7 @@
       <td><%= entry.created_at.strftime("%A at  %l:%M%P") %></td>
       <td><% if entry.end.blank? %>-<% else %><%= entry.end.strftime("%A at  %l:%M%P") %><% end %></td>
       <td><%= entry.comment %></td>
-      <td><%= link_to '', edit_project_project_entry_path(@project, entry), class: "icon-pencil icon-session-action icon-2x" %>
+      <td><%= link_to '', edit_user_project_project_entry_path(@project, entry), class: "icon-pencil icon-session-action icon-2x" %>
         <%= link_to '', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "icon-remove-sign icon-session-action icon-2x"%></td>
     </tr>
   <% end %>
