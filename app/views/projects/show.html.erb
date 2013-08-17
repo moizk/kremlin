@@ -1,10 +1,11 @@
 <div class="smallercontainer">
 <div class="page-header">
-  <%= link_to user_project_project_entries_path(current_user, @project), :method => :post, class: "btn btn-black pull-right"  do %><i class="icon-plus icon-2x"></i> <% end %>
+  <%= link_to user_project_project_entries_path(current_user, @project), :method => :post, class: "btn btn-green pull-right"  do %><i class="icon-plus icon-2x"></i> <% end %>
   <h1><%= @project.name %></h1>
-  <%= link_to 'Website', @project.website, class: "btn btn-mini" %>
-  <%= link_to 'Git Repo', @project.git_repo, class: "btn btn-mini" %>
-  <%= link_to 'Edit', edit_user_project_path(current_user, @project), class: "btn btn-mini" %>
+  <%= link_to 'Website', @project.website, class: "btn btn-purple btn-mini" %>
+  <%= link_to 'Git Repo', @project.git_repo, class: "btn btn-blue btn-mini" %>
+  <%= link_to 'Edit', edit_user_project_path(current_user, @project), class: "btn btn-yellow btn-mini" %>
+  <%= link_to 'Delete', user_project_path(current_user, @project), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-red btn-mini" %>
 </div>
 
 <table class="table">
