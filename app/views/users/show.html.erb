@@ -1,1 +1,10 @@
-Hello
+<div class="user_card">
+	<%= image_tag @user.gravatar_url, class: "img-circle" %><br>
+	<h1><%= "#{@user.first_name}  #{@user.last_name}" %> </h1>
+	<h5>
+		<%= @user.title %><br>
+		<%= @user.company %>
+	</h5>
+	<h5><%= @user.location %></h5>
+	<%= link_to "Edit", edit_user_registration_path(current_user) %><br>
+</div>

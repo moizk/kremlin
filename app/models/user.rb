@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :projects
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :title, :company, :location
   # attr_accessible :title, :body
 
     def gravatar_url
