@@ -1,0 +1,29 @@
+/* Floats */
+.left { float: left; }
+.right { float: right; }
+
+/*Text Aligns*/
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* Nudge */
+
+.nudge-down {
+	margin-top: 10px;
+}
