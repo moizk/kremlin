@@ -1,0 +1,35 @@
+<div class="smallercontainer">
+  <% flash.each do |type, message| %>
+    <div class="alert <%= flash_class type %>">
+      <%= message %>
+    </div>
+    <% end %>
+
+<div class="page-header">
+  <%= link_to project_project_entries_path(@project), :method => :post, class: "btn btn-black pull-right"  do%><i class="icon-plus icon-2x"></i> <% end %>
+  <h1><%= @project.name %></h1>
+  <%= link_to 'Website', @project.website, class: "btn btn-mini" %>
+  <%= link_to 'Git Repo', @project.git_repo, class: "btn btn-mini" %>
+  <%= link_to 'Edit', edit_project_path(@project), class: "btn btn-mini" %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Start</th>
+      <th>End</th>
+      <th>Comments</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <% @project.project_entries.each do |entry| %>
+    <tr>
+      <td><%= entry.created_at.strftime("%A at  %l:%M%P") %></td>
+      <td><%= entry.updated_at.strftime("%A at  %l:%M%P") %></td>
+      <td><%= entry.comment %></td>
+      <td><%= link_to '', edit_project_project_entry_path(@project, entry), class: "icon-pencil icon-session-action icon-2x" %>
+        <%= link_to '', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "icon-remove-sign icon-session-action icon-2x"%></td>
+    </tr>
+  <% end %>
+</table>

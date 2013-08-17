@@ -1,0 +1,11 @@
+<center><%= link_to 'New Project', new_project_path, class: "btn btn-black new-project btn-large" %></center><br>
+<div class="clearfix"></div>
+<center>
+    <% @projects.each do |project| %>
+        <div class="project-square <%= project.color %>">
+          <%= link_to project.git_repo do %><i class="icon-github"></i><% end %>
+          <%= link_to project.website do %><i class="icon-globe"></i><% end %>
+          <%= link_to project do %><h3><%= project.name %></h3><% end %>
+        </div>
+    <% end %>
+</center>
