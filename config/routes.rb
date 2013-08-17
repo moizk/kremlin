@@ -1,4 +1,13 @@
 Kremlin::Application.routes.draw do
+  resources :project_entries
+
+  resources :projects do
+    resources :project_entries
+  end
+
+  root to: "projects#index"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
