@@ -2,9 +2,6 @@
   /* Postioning & Display*/
   display: inline-block;
   padding: .5em 4em;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
   margin-bottom: 2px;
 
   /*Other */
@@ -169,7 +166,7 @@
 ===================*/
 
 .btn-red {
-  background-color: #F34541;
+  background-color: #f44a56;
   color: #ffffff;
   -webkit-transition: background 300ms ease;
   -moz-transition: background 300ms ease;
