@@ -1,85 +1,36 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @school.name %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%= @school.website %>
-</p>
-
-<p>
-  <b>Facebook:</b>
-  <%= @school.facebook %>
-</p>
-
-<p>
-  <b>Twitter:</b>
-  <%= @school.twitter %>
-</p>
-
-<p>
-  <b>Wiki:</b>
-  <%= @school.wiki %>
-</p>
-
-<p>
-  <b>Private:</b>
-  <%= @school.private %>
-</p>
-
-<p>
-  <b>Students:</b>
-  <%= @school.students %>
-</p>
-
-<p>
-  <b>Saf:</b>
-  <%= @school.saf %>
-</p>
-
-<p>
-  <b>Budget:</b>
-  <%= @school.budget %>
-</p>
-
-<p>
-  <b>Sga website:</b>
-  <%= @school.sga_website %>
-</p>
-
-<p>
-  <b>Sga facebook:</b>
-  <%= @school.sga_facebook %>
-</p>
-
-<p>
-  <b>Sga twitter:</b>
-  <%= @school.sga_twitter %>
-</p>
-
-<p>
-  <b>Newspaper:</b>
-  <%= @school.newspaper %>
-</p>
-
-<p>
-  <b>Competitor:</b>
-  <%= @school.competitor_id %>
-</p>
-
-<p>
-  <b>Latitude:</b>
-  <%= @school.latitude %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%= @school.longitude %>
-</p>
-
-
-<%= link_to 'Edit', edit_school_path(@school) %> |
-<%= link_to 'Back', schools_path %>
+<h1 class="text-center"><%= @school.name %></h1>
+<div class="container school_show_container">
+  <h3 class="text-center">School</h3>
+  <div class="fa-row row">
+    <div class="col-xs-4">
+      <%= link_to @school.website do %><i class="fa fa-globe"></i><% end %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to @school.facebook do %><i class="fa fa-facebook"></i><% end %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to @school.twitter do %><i class="fa fa-twitter"></i><% end %>
+    </div>
+  </div>
+  <br>
+  <center><%= link_to "Wiki", @school.wiki, class: "btn btn-green btn-mini" %></center>
+  <br>
+  <h4><b><%= @school.students %></b><br><small>Undergraduate Students</small></h4>
+  <h4><b><%= number_to_currency(@school.saf) %></b><br><small>Student Activity Fee</small></h4>
+  <h4><b><%= number_to_currency(@school.budget, precision: 0) %></b><br><small>SGA Budget</small></h4>
+  <h3 class="text-center">Student Government</h3>
+  <div class="fa-row row">
+    <div class="col-xs-4">
+      <%= link_to @school.sga_website do %><i class="fa fa-globe"></i><% end %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to @school.sga_facebook do %><i class="fa fa-facebook"></i><% end %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to @school.sga_twitter do %><i class="fa fa-twitter"></i><% end %>
+    </div>
+  </div>
+  <br>
+  <center><%= link_to "Wiki", @school.newspaper, class: "btn btn-green btn-mini" %></center>
+  <br>
+</div>

@@ -36,30 +36,46 @@ div.school_card {
 		font-weight: 300;
 		font-size: 2em;
 	}
-	div.fa-row {
-		text-align: center;
-		padding-bottom: 10px;
-		border-bottom: 1px solid #ccc;
-		margin-left: 0;
-		margin-right: 0;
-		a {
-			color: #333;
-			font-size: 2.5em;
-			margin-left: 5px;
-			.fa-globe, .fa-facebook, .fa-twitter {
-				transition: all 0.3s ease-in;
+}
+
+// Font-Awesome Row
+
+div.fa-row {
+	text-align: center;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+	margin-left: 0;
+	margin-right: 0;
+	a {
+		color: #333;
+		font-size: 2.5em;
+		margin-left: 5px;
+		.fa-globe, .fa-facebook, .fa-twitter {
+			transition: all 0.3s ease-in;
+		}
+		&:hover {
+			.fa-globe {
+				color: #fa4b00;
 			}
-			&:hover {
-				.fa-globe {
-					color: #fa4b00;
-				}
-				.fa-facebook {
-					color: #3c599b;
-				}
-				.fa-twitter {
-					color: #00b0ed;
-				}
+			.fa-facebook {
+				color: #3c599b;
+			}
+			.fa-twitter {
+				color: #00b0ed;
 			}
 		}
+	}
+}
+
+
+// School Show Page
+
+div.school_show_container {
+	background-color: #fff;
+	max-width: 420px;
+	h4 {
+		text-align: center;
+		font-weight: 300;
+		font-size: 2em;
 	}
 }
