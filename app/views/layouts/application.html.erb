@@ -10,18 +10,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div class="navigation">
-    <div class="navinner">
-      <center><a href="/"><%= image_tag 'kremlinstar.png', class: "img-circle" %></a></center>
+  <%= render 'layouts/nav' %>
+  <div class="container">
+    <% flash.each do |type, message| %>
+    <div class="alert <%= flash_class type %>">
+      <%= message %>
     </div>
+    <% end %>
+    <%= yield %>
   </div>
-<div class="container">
-  <% flash.each do |type, message| %>
-  <div class="alert <%= flash_class type %>">
-    <%= message %>
-  </div>
-  <% end %>
-<%= yield %>
-</div>
 </body>
 </html>
