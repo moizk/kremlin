@@ -2,39 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.school_card {
-	display: inline-block;
-	margin-left: 10px;
-	border: 1px solid #ccc;
-	max-width: 320px;
-	background-color: #fff;
-	padding-bottom: 30px;
-	&:nth-of-type(1) {
-		margin-left: 0;
-	}
-	h3 {
-		margin-top: 0;
-		padding: 15px 0;
-		background-color: #268bd2;
-		color: #fff;
-		border-top: 1px solid #268bd2;
-		border-bottom: 1px solid #268bd2;
-		transition: all 0.4s ease-in;
-		&:hover {
-			background-color: #42ba5d;
-			border-color: #42ba5d;
+div.school_cards_container {
+	text-align: center;
+	div.school_card {
+		display: inline-block;
+		margin-left: 10px;
+		border: 1px solid #ccc;
+		max-width: 320px;
+		background-color: #fff;
+		padding-bottom: 30px;
+		@media screen and (max-width: 320px) {
+			margin-left: 0;
+			margin-right: 0;
+			margin-bottom: 20px;
 		}
-		a {
+		&:nth-of-type(1) {
+			margin-left: 0;
+		}
+		h3 {
+			margin-top: 0;
+			padding: 15px 0;
+			background-color: #268bd2;
 			color: #fff;
+			border-top: 1px solid #268bd2;
+			border-bottom: 1px solid #268bd2;
+			transition: all 0.4s ease-in;
 			&:hover {
-				text-decoration: none;
+				background-color: #42ba5d;
+				border-color: #42ba5d;
+			}
+			a {
+				color: #fff;
+				&:hover {
+					text-decoration: none;
+				}
 			}
 		}
-	}
-	h4 {
-		text-align: center;
-		font-weight: 300;
-		font-size: 2em;
+		h4 {
+			text-align: center;
+			font-weight: 300;
+			font-size: 2em;
+		}
 	}
 }
 
