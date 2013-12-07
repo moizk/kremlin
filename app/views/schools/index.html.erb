@@ -1,53 +1,46 @@
-<h1>Listing schools</h1>
+<center><%= link_to 'New School', new_school_path, class: "btn btn-black" %><br></center>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Website</th>
-    <th>Facebook</th>
-    <th>Twitter</th>
-    <th>Wiki</th>
-    <th>Private</th>
-    <th>Students</th>
-    <th>Saf</th>
-    <th>Budget</th>
-    <th>Sga website</th>
-    <th>Sga facebook</th>
-    <th>Sga twitter</th>
-    <th>Newspaper</th>
-    <th>Competitor</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @schools.each do |school| %>
-  <tr>
-    <td><%= school.name %></td>
-    <td><%= school.website %></td>
-    <td><%= school.facebook %></td>
-    <td><%= school.twitter %></td>
-    <td><%= school.wiki %></td>
-    <td><%= school.private %></td>
-    <td><%= school.students %></td>
-    <td><%= school.saf %></td>
-    <td><%= school.budget %></td>
-    <td><%= school.sga_website %></td>
-    <td><%= school.sga_facebook %></td>
-    <td><%= school.sga_twitter %></td>
-    <td><%= school.newspaper %></td>
-    <td><%= school.competitor_id %></td>
-    <td><%= school.latitude %></td>
-    <td><%= school.longitude %></td>
-    <td><%= link_to 'Show', school %></td>
-    <td><%= link_to 'Edit', edit_school_path(school) %></td>
-    <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<div class="school_card">
+  <h3 class="text-center"><%= school.name %></h3>
+  <div class="fa-row row">
+    <div class="col-xs-4">
+      <%= link_to school.website do %><i class="fa fa-globe"></i><% end %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to school.facebook do %><i class="fa fa-facebook"></i><% end %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to school.twitter do %><i class="fa fa-twitter"></i><% end %>
+    </div>
+  </div>
+  <h4><%= number_with_delimiter(school.students) %> Students</h4>
+  <center><%= link_to "Wiki", school.wiki, class: "btn btn-green btn-mini" %></center><br>
+  <h3 class="text-center">Student Government</h3>
+  <div class="fa-row row">
+    <div class="col-xs-4">
+      <%= link_to school.sga_website do %><i class="fa fa-globe"></i><% end %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to school.sga_facebook do %><i class="fa fa-facebook"></i><% end %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to school.sga_twitter do %><i class="fa fa-twitter"></i><% end %>
+    </div>
+  </div>
+  <h4><%= number_to_currency school.budget %></h4>
+  <center><%= link_to "Paper", school.newspaper, class: "btn btn-mini btn-green" %></center>
+  <hr>
+  <center>
+  <%= link_to 'Edit', edit_school_path(school), class: "btn btn-yellow btn-mini" %>
+  <%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-red btn-mini" %>
+  </center>
+  </div>
+</div>
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New School', new_school_path %>
+
+
+

@@ -1,3 +1,46 @@
 // Place all the styles related to the Schools controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.school_card {
+	border: 1px solid #ccc;
+	max-width: 320px;
+	background-color: #fff;
+	padding-bottom: 30px;
+	h3 {
+		margin-top: 0;
+		padding: 15px 0;
+		background-color: #268bd2;
+		color: #fff;
+		border-top: 1px solid #268bd2;
+		border-bottom: 1px solid #268bd2;
+	}
+	h4 {
+		text-align: center;
+		font-weight: 300;
+		font-size: 2em;
+	}
+	div.fa-row {
+		text-align: center;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #ccc;
+		margin-left: 0;
+		margin-right: 0;
+		a {
+			color: #333;
+			font-size: 2.5em;
+			margin-left: 5px;
+			&:hover {
+				.fa-globe {
+					color: #fa4b00;
+				}
+				.fa-facebook {
+					color: #3c599b;
+				}
+				.fa-twitter {
+					color: #00b0ed;
+				}
+			}
+		}
+	}
+}
