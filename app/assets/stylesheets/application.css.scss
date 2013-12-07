@@ -9,10 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require font-awesome
  *= require_tree .
  */
-
-@import "font-awesome";
 
 
 body { background-color: #ECEEF1; }
@@ -55,7 +54,7 @@ div.navigation {
       a {
         color: #fff;
         font-weight: 800;
-        transition: color 400ms ease-in-out;
+        transition: all 0.4s cubic-bezier(0.19,1,0.22,1);
         &:hover {
           color: #f1e577;
           text-decoration: none;
