@@ -29,7 +29,7 @@
       <%= link_to school.sga_twitter do %><i class="fa fa-twitter"></i><% end %>
     </div>
   </div>
-  <h4><%= number_to_currency school.budget %></h4>
+  <h4><%= number_to_currency(school.budget, precision: 0) %></h4>
   <center><%= link_to "Paper", school.newspaper, class: "btn btn-mini btn-green" %></center>
   <hr>
   <center>
