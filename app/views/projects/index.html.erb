@@ -3,8 +3,8 @@
 <center>
     <% current_user.projects.each do |project| %>
         <div class="project-square <%= project.color %>">
-          <%= link_to project.git_repo do %><i class="icon-github"></i><% end %>
-          <%= link_to project.website do %><i class="icon-globe"></i><% end %>
+          <%= link_to project.git_repo do %><i class="fa fa-github"></i><% end %>
+          <%= link_to project.website do %><i class="fa fa-globe"></i><% end %>
           <%= link_to user_project_path(project.user, project) do %><h3><%= project.name %></h3><% end %>
         </div>
     <% end %>
