@@ -56,6 +56,16 @@ ul {
   -webkit-padding-start: 0;
 }
 
+legend {
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0 5px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 11px;
+}
+
 
 /* Page Elements */
 

@@ -12,70 +12,58 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: "School Name" %>
   </div>
   <div class="field">
-    <%= f.label :website %><br />
-    <%= f.text_field :website %>
+    <%= f.text_field :website, placeholder: "Website" %>
   </div>
   <div class="field">
-    <%= f.label :facebook %><br />
-    <%= f.text_field :facebook %>
+    <%= f.text_field :facebook, placeholder: "Facebook" %>
   </div>
   <div class="field">
-    <%= f.label :twitter %><br />
-    <%= f.text_field :twitter %>
+    <%= f.text_field :twitter, placeholder: "Twitter" %>
   </div>
   <div class="field">
-    <%= f.label :wiki %><br />
-    <%= f.text_field :wiki %>
+    <%= f.text_field :wiki, placeholder: "Wikipedia" %>
   </div>
   <div class="field">
-    <%= f.label :private %><br />
-    <%= f.check_box :private %>
+    <%= f.text_field :students, placeholder: "Number of Students" %>
+  </div>
+  <legend>Student Government</legend>
+  <div class="field">
+    <%= f.text_field :saf, placeholder: "Student Activity Fee" %>
   </div>
   <div class="field">
-    <%= f.label :students %><br />
-    <%= f.number_field :students %>
+    <%= f.text_field :budget, placeholder: "SGA Budget" %>
   </div>
   <div class="field">
-    <%= f.label :saf %><br />
-    <%= f.number_field :saf %>
+    <%= f.text_field :sga_website, placeholder: "SGA Website" %>
   </div>
   <div class="field">
-    <%= f.label :budget %><br />
-    <%= f.number_field :budget %>
+    <%= f.text_field :sga_facebook, placeholder: "SGA Facebook" %>
   </div>
   <div class="field">
-    <%= f.label :sga_website %><br />
-    <%= f.text_field :sga_website %>
+    <%= f.text_field :sga_twitter, placeholder: "SGA Twitter" %>
   </div>
   <div class="field">
-    <%= f.label :sga_facebook %><br />
-    <%= f.text_field :sga_facebook %>
-  </div>
-  <div class="field">
-    <%= f.label :sga_twitter %><br />
-    <%= f.text_field :sga_twitter %>
-  </div>
-  <div class="field">
-    <%= f.label :newspaper %><br />
-    <%= f.text_field :newspaper %>
+    <%= f.text_field :newspaper, placeholder: "School Newspaper" %>
   </div>
   <div class="field">
     <%= f.label :competitor_id %><br />
     <%= f.number_field :competitor_id %>
   </div>
   <div class="field">
-    <%= f.label :latitude %><br />
-    <%= f.text_field :latitude %>
+    <%= f.text_field :latitude, placeholder: "Latitude" %>
   </div>
   <div class="field">
-    <%= f.label :longitude %><br />
-    <%= f.text_field :longitude %>
+    <%= f.text_field :longitude, placeholder: "Longitude" %>
+  </div>
+  <div class="field">
+    <%= f.label :private, "Private School?" %>&nbsp;
+    <%= f.check_box :private %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <br>
+    <%= f.submit "Submit", class: "btn btn-black" %>
   </div>
 <% end %>
