@@ -3,7 +3,7 @@
 
 <% @schools.each do |school| %>
 <div class="school_card">
-  <h3 class="text-center"><%= school.name %></h3>
+  <h3 class="text-center"><%= link_to school.name, school %></h3>
   <div class="fa-row row">
     <div class="col-xs-4">
       <%= link_to school.website do %><i class="fa fa-globe"></i><% end %>

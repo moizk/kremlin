@@ -19,6 +19,17 @@ div.school_card {
 		color: #fff;
 		border-top: 1px solid #268bd2;
 		border-bottom: 1px solid #268bd2;
+		transition: all 0.4s ease-in;
+		&:hover {
+			background-color: #42ba5d;
+			border-color: #42ba5d;
+		}
+		a {
+			color: #fff;
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 	h4 {
 		text-align: center;
@@ -35,6 +46,9 @@ div.school_card {
 			color: #333;
 			font-size: 2.5em;
 			margin-left: 5px;
+			.fa-globe, .fa-facebook, .fa-twitter {
+				transition: all 0.3s ease-in;
+			}
 			&:hover {
 				.fa-globe {
 					color: #fa4b00;
