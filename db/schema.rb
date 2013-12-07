@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131207153112) do
+ActiveRecord::Schema.define(:version => 20131207195158) do
 
   create_table "project_entries", :force => true do |t|
     t.integer  "project_id"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20131207153112) do
     t.string   "wiki"
     t.boolean  "private"
     t.integer  "students"
-    t.integer  "saf"
+    t.string   "saf"
     t.integer  "budget"
     t.string   "sga_website"
     t.string   "sga_facebook"
