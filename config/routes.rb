@@ -1,6 +1,9 @@
 Kremlin::Application.routes.draw do
 
 
+  resources :competitors
+
+
   resources :schools
 
 

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @competitor.name %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%= @competitor.website %>
+</p>
+
+<p>
+  <b>Facebook:</b>
+  <%= @competitor.facebook %>
+</p>
+
+<p>
+  <b>Twitter:</b>
+  <%= @competitor.twitter %>
+</p>
+
+
+<%= link_to 'Edit', edit_competitor_path(@competitor) %> |
+<%= link_to 'Back', competitors_path %>
