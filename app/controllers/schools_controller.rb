@@ -25,6 +25,7 @@ class SchoolsController < ApplicationController
   # GET /schools/new.json
   def new
     @school = School.new
+    @competitors = Competitor.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class SchoolsController < ApplicationController
   # GET /schools/1/edit
   def edit
     @school = School.find(params[:id])
+    @competitors = Competitor.all
   end
 
   # POST /schools

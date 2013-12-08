@@ -48,9 +48,9 @@
   <div class="field">
     <%= f.text_field :newspaper, placeholder: "School Newspaper" %>
   </div>
+  <legend>Competition?</legend>
   <div class="field">
-    <%= f.label :competitor_id %><br />
-    <%= f.number_field :competitor_id %>
+    <%= collection_select(:school, :competitor_id, @competitors, :id, :name) %>
   </div>
   <div class="field">
     <%= f.text_field :latitude, placeholder: "Latitude" %>
