@@ -1,15 +1,20 @@
-<h1>Listing competitors</h1>
+<h1 class="text-center">The Competition</h1>
+<center><%= link_to 'New Competitor', new_competitor_path, class: "btn btn-red" %></center>
 
-<table>
+<div class="container">
+
+<table class="table">
+  <thead>
   <tr>
     <th>Name</th>
     <th>Website</th>
     <th>Facebook</th>
     <th>Twitter</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Destroy</th>
   </tr>
+  </thead>
 
 <% @competitors.each do |competitor| %>
   <tr>
@@ -25,5 +30,4 @@
 </table>
 
 <br />
-
-<%= link_to 'New Competitor', new_competitor_path %>
+</div>
