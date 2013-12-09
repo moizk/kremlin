@@ -10,44 +10,38 @@
       </ul>
     </div>
   <% end %>
-
+  <legend>Details</legend>
   <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, placeholder: "Steve" %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, placeholder: "Jobs" %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
+    <%= f.text_field :title, placeholder: "CEO" %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :phone, placeholder: "408-996-1010" %>
   </div>
   <div class="field">
-    <%= f.label :linkedin %><br />
-    <%= f.text_field :linkedin %>
+    <%= f.text_field :email, placeholder: "sjobs@apple.com" %>
+  </div>
+  <legend>Social</legend>
+  <div class="field">
+    <%= f.text_field :linkedin, placeholder: "LinkedIn" %>
   </div>
   <div class="field">
-    <%= f.label :facebook %><br />
-    <%= f.text_field :facebook %>
+    <%= f.text_field :facebook, placeholder: "Facebook" %>
   </div>
   <div class="field">
-    <%= f.label :twitter %><br />
-    <%= f.text_field :twitter %>
+    <%= f.text_field :twitter, placeholder: "Twitter" %>
   </div>
+  <legend>School</legend>
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :school_id %><br />
-    <%= f.number_field :school_id %>
+    <%= collection_select(:people, :school_id, @schools, :id, :name) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <br>
+    <%= f.submit "Submit", class: "btn btn-red" %>
   </div>
 <% end %>
