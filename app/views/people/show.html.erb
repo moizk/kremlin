@@ -1,50 +1,31 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>First name:</b>
-  <%= @person.first_name %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%= @person.last_name %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @person.phone %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @person.email %>
-</p>
-
-<p>
-  <b>Linkedin:</b>
-  <%= @person.linkedin %>
-</p>
-
-<p>
-  <b>Facebook:</b>
-  <%= @person.facebook %>
-</p>
-
-<p>
-  <b>Twitter:</b>
-  <%= @person.twitter %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @person.title %>
-</p>
-
-<p>
-  <b>School:</b>
-  <%= @person.school_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<div class="col-sm-6 col-sm-offset-4">
+<div class="person_business_card">
+  <h1 class="text-center"><%= @person.full_name.titleize %></h1>
+  <h5 class="text-center"><%= @person.title %></h5>
+  <h4 class="text-center"><%= @person.school.name %></h4>
+  <hr>
+  <div class="row text-center">
+    <div class="col-xs-6">
+      <i class="fa fa-phone fa-2x"></i><br>
+      <%= number_to_phone @person.phone %>
+    </div>
+    <div class="col-xs-6">
+      <i class="fa  fa-envelope-o fa-2x"></i><br>
+      <%= @person.email %>
+    </div>
+  </div>
+  <hr>
+  <legend>Social</legend>
+  <div class="row fa-row">
+    <div class="col-xs-4">
+      <%= link_to @person.facebook do %><i class="fa fa-facebook"></i><% end %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to @person.twitter do %><i class="fa fa-twitter"></i><% end %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to @person.linkedin do %><i class="fa fa-linkedin"></i><% end %>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,3 +1,20 @@
 // Place all the styles related to the People controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.person_business_card {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	min-width: 420px;
+	margin: 10px;
+	float: left;
+	h1 {
+		margin-bottom: 0;
+		font-weight: 400;
+	}
+	h5 {
+		margin-top: 0;
+		font-size: 1.1em;
+		font-weight: 400;
+	}
+}

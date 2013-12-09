@@ -1,39 +1,42 @@
 <div class="container">
   <h1 class="text-center">People</h1>
   <center><%= link_to 'New Person', new_person_path, class: "btn btn-red" %></center><br>
-<table class="table">
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Linkedin</th>
-      <th>Facebook</th>
-      <th>Twitter</th>
-      <th>Title</th>
-      <th>School</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+
   <% @people.each do |person| %>
-    <tr>
-      <td><%= person.first_name %></td>
-      <td><%= person.last_name %></td>
-      <td><%= person.phone %></td>
-      <td><%= person.email %></td>
-      <td><%= person.linkedin %></td>
-      <td><%= person.facebook %></td>
-      <td><%= person.twitter %></td>
-      <td><%= person.title %></td>
-      <td><%= person.school_id %></td>
-      <td><%= link_to 'Show', person %></td>
-      <td><%= link_to 'Edit', edit_person_path(person) %></td>
-      <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+  <div class="person_business_card">
+    <h1 class="text-center"><%= person.full_name.titleize %></h1>
+    <h5 class="text-center"><%= person.title %></h5>
+    <h4 class="text-center"><%= person.school.name %></h4>
+    <hr>
+    <div class="row text-center">
+      <div class="col-xs-6">
+        <i class="fa fa-phone fa-2x"></i><br>
+        <%= number_to_phone person.phone %>
+      </div>
+      <div class="col-xs-6">
+        <i class="fa  fa-envelope-o fa-2x"></i><br>
+        <%= person.email %>
+      </div>
+    </div>
+    <hr>
+    <legend>Social</legend>
+    <div class="row fa-row">
+      <div class="col-xs-4">
+        <%= link_to person.facebook do %><i class="fa fa-facebook"></i><% end %>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to person.twitter do %><i class="fa fa-twitter"></i><% end %>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to person.linkedin do %><i class="fa fa-linkedin"></i><% end %>
+      </div>
+    </div>
+    <div class="text-center">
+      <br>
+      <%= link_to 'Edit', edit_person_path(person), class: "btn btn-yellow btn-mini" %>
+      <%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-red btn-mini' %>
+    </div>
+      <br>
+  </div>
   <% end %>
-</table>
-<br />
 </div>
