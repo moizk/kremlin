@@ -12,20 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: "Project Name" %>
   </div>
   <div class="field">
-    <%= f.label :website %><br />
-    <%= f.text_field :website %>
+    <%= f.text_field :website, placeholder: "Website" %>
   </div>
   <div class="field">
-    <%= f.label :git_repo %><br />
-    <%= f.text_field :git_repo %>
+    <%= f.text_field :git_repo, placeholder: "GitHub Repo" %>
   </div>
   <div class="field">
-    <%= f.label :color %><br />
-    <%= f.text_field :color %>
+    <%= f.text_field :color, placeholder: "Color" %>
   </div>
   <div class="actions">
     <%= f.submit "Submit", class: "btn btn-red" %>
