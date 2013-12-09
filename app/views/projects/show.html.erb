@@ -1,13 +1,13 @@
-<div class="smallercontainer">
-<div class="page-header">
-  <%= link_to user_project_project_entries_path(current_user, @project), :method => :post, class: "btn btn-green pull-right"  do %><i class="icon-plus icon-2x"></i> <% end %>
-  <h1><%= @project.name %></h1>
-  <%= link_to 'Website', @project.website, class: "btn btn-purple btn-mini" %>
-  <%= link_to 'Git Repo', @project.git_repo, class: "btn btn-blue btn-mini" %>
-  <%= link_to 'Edit', edit_user_project_path(current_user, @project), class: "btn btn-yellow btn-mini" %>
-  <%= link_to 'Delete', user_project_path(current_user, @project), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-red btn-mini" %>
+<h1 class="text-center"><%= @project.name %></h1>
+<div class="text-center">
+<%= link_to @project.website do %><i class="fa fa-globe fa-4x icon-session-action"></i> <% end %>
+<%= link_to @project.git_repo do %><i class="fa fa-github fa-4x icon-session-action"></i> <% end %>
 </div>
-
+<br>
+<center>
+  <%= link_to user_project_project_entries_path(current_user, @project), :method => :post, class: "btn btn-mini btn-green" do %><i class="fa fa-plus fa-2x"></i><% end %>
+</center>
+<br>
 <table class="table">
   <thead>
     <tr>
@@ -23,8 +23,15 @@
       <td><%= entry.created_at.strftime("%A at  %l:%M%P") %></td>
       <td><% if entry.end.blank? %>-<% else %><%= entry.end.strftime("%A at  %l:%M%P") %><% end %></td>
       <td><%= entry.comment %></td>
-      <td><%= link_to '', edit_user_project_project_entry_path(current_user, @project, entry), class: "icon-ok-sign icon-session-action icon-2x" %>
-        <%= link_to '', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "icon-remove-sign icon-session-action icon-2x"%></td>
+      <td class="project-user-actions">
+        <%= link_to edit_user_project_project_entry_path(current_user, @project, entry) do %><i class="fa fa-check-circle-o icon-session-action fa-2x"></i> <% end %>
+        <%= link_to entry, method: :delete, data: { confirm: 'Are you sure?' } do %> <i class="fa fa-times-circle-o icon-session-action fa-2x"></i> <% end %>
+      </td>
     </tr>
   <% end %>
 </table>
+
+<div class="text-center">
+  <%= link_to 'Edit Project', edit_user_project_path(current_user, @project), class: "btn btn-yellow btn-mini" %>
+  <%= link_to 'Delete Project', user_project_path(current_user, @project), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-red btn-mini" %>
+</div>

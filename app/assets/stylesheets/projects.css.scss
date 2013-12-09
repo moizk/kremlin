@@ -61,17 +61,21 @@
 
 }
 
-a.icon-session-action {
-	color: black;
+.icon-session-action {
+	color: #000;
 	-webkit-transition: color .8s ease-in-out;
 	   -moz-transition: color .8s ease-in-out;
 	        transition: color .8s ease-in-out;
 
 }
 
-a.icon-session-action:hover {
-	text-decoration: none;
+.icon-session-action:hover  {
 	color: #D84A35;
+}
+
+td.project-user-actions a:hover {
+	text-decoration: none;
+
 }
 
 // Tile Colors
