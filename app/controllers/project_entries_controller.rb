@@ -46,6 +46,7 @@ class ProjectEntriesController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @project_entry = @project.project_entries.new(params[:project_entry])
+    @project_entry.start = Time.now
 
     respond_to do |format|
       if @project_entry.save
