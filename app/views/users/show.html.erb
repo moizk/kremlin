@@ -1,19 +1,19 @@
 <div class="user_card">
-	<%= image_tag @user.gravatar_url, class: "img-circle" %><br>
-	<h1><%= "#{@user.first_name}  #{@user.last_name}" %> </h1>
-	<h5>
-		<%= @user.title %><br>
-		<%= @user.company %>
-	</h5>
-	<h5><%= @user.location %></h5>
-	<%= link_to "Edit", edit_user_registration_path(current_user) %><br>
+  <%= image_tag @user.gravatar_url, class: "img-circle" %><br>
+  <h1><%= "#{@user.first_name}  #{@user.last_name}" %> </h1>
+  <h5>
+    <%= @user.title %><br>
+    <%= @user.company %>
+  </h5>
+  <h5><%= @user.location %></h5>
+  <%= link_to "Edit", edit_user_registration_path(current_user) %><br>
 </div>
 <br>
 
 <% @user.projects.each do |project| %>
-	<div class="project-square text-center <%= project.color %>">
-	  <%= link_to project.git_repo do %><i class="fa fa-github"></i><% end %>
-	  <%= link_to project.website do %><i class="fa fa-globe"></i><% end %>
-	  <%= link_to user_project_path(project.user, project) do %><h3><%= project.name %></h3><% end %>
-	</div>
-	<% end %>
+  <div class="project-square text-center <%= project.color %>">
+    <%= link_to project.git_repo do %><i class="fa fa-github"></i><% end %>
+    <%= link_to project.website do %><i class="fa fa-globe"></i><% end %>
+    <%= link_to user_project_path(project.user, project) do %><h3><%= project.name %></h3><% end %>
+  </div>
+<% end %>
