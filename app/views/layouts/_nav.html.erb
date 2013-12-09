@@ -6,6 +6,7 @@
       <li><a href="/schools">Schools</a><%= link_to new_school_path  do %><small> <i class="fa fa-plus-circle"></i></small><% end %></li>
       <li><a href="/">Projects</a><%= link_to new_user_project_path(current_user)  do %><small> <i class="fa fa-plus-circle"></i></small><% end %></li>
       <li><a href="/people">People</a><%= link_to new_person_path  do %><small> <i class="fa fa-plus-circle"></i></small><% end %></li>
+      <li><small><%= link_to users_path do %><i class="fa fa-circle"></i></small><% end %></li>
       <li><small><%= link_to destroy_user_session_path, :method => :delete do %><i class="fa fa-power-off"></i></small><% end %></li>
     </ul>
     <% else %>
