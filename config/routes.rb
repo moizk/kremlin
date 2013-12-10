@@ -2,17 +2,9 @@ Kremlin::Application.routes.draw do
 
 
   resources :note_categories
-
-
   resources :notes
-
-
   resources :people
-
-
   resources :competitors
-
-
   resources :schools
 
 
@@ -37,6 +29,7 @@ Kremlin::Application.routes.draw do
     resources :projects do
       resources :project_entries
     end
+    resources :notes
     resources :note_categories
   end
 

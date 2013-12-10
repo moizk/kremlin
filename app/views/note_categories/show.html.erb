@@ -1,20 +1,18 @@
-<p id="notice"><%= notice %></p>
+<h1 class="text-center"><%= @note_category.name %></h1>
+<h5 class="text-center"><%= @note_category.user.full_name.titleize %></h5>
+<h5><center><%= link_to 'Edit', edit_user_note_category_path(@note_category), class: "text-center" %></center></h5>
+<center><%= link_to new_user_note_path(current_user), class: "btn btn-red" do %><i class="fa fa-plus fa-2x"></i> <% end %></center>
 
-<p>
-  <b>Name:</b>
-  <%= @note_category.name %>
-</p>
-
-<p>
-  <b>Cover:</b>
-  <%= @note_category.cover %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @note_category.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_note_category_path(@note_category) %> |
-<%= link_to 'Back', note_categories_path %>
+<div class="notes_container">
+  <% if @note_category.notes.empty? %>
+  <center>
+  <i class="fa fa-frown-o fa-4x"></i>
+  <h5>We used to dream about this stuff.<br>Now we get to build it.<br>It's pretty great.</h5>
+  </center>
+  <% end %>
+  <% @note_category.notes.each do |note| %>
+  <h3><%= link_to note.title, note.url, :target => "_blank" %></h3>
+  <h5><%= note.user.full_name.titleize %></h5>
+  <hr>
+  <% end %>
+</div>

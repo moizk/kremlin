@@ -24,6 +24,8 @@ class NotesController < ApplicationController
   # GET /notes/new
   # GET /notes/new.json
   def new
+    @user = User.find(params[:user_id])
+    @note_categories = NoteCategory.all
     @note = Note.new
 
     respond_to do |format|
@@ -34,17 +36,20 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
+    @user = User.find(params[:user_id])
+    @note_categories = NoteCategory.all
     @note = Note.find(params[:id])
   end
 
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(params[:note])
+    @user = User.find(params[:user_id])
+    @note = @user.notes.new(params[:note])
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
+        format.html { redirect_to @note.note_category, notice: 'Note was successfully created.' }
         format.json { render json: @note, status: :created, location: @note }
       else
         format.html { render action: "new" }
@@ -56,6 +61,7 @@ class NotesController < ApplicationController
   # PUT /notes/1
   # PUT /notes/1.json
   def update
+    @user = User.find(params[:user_id])
     @note = Note.find(params[:id])
 
     respond_to do |format|

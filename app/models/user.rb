@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :projects
+  has_many :notes
   has_many :note_categories
 
   # Setup accessible (or protected) attributes for your model
