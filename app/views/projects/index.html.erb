@@ -1,5 +1,3 @@
-<center><%= link_to 'New Project', new_user_project_path(current_user), class: "btn btn-black new-project" %></center><br>
-<div class="clearfix"></div>
 <center>
     <% current_user.projects.each do |project| %>
         <div class="project-square <%= project.color %>">

@@ -1,7 +1,4 @@
 <div class="container">
-  <h1 class="text-center">People</h1>
-  <center><%= link_to 'New Person', new_person_path, class: "btn btn-red" %></center><br>
-
   <% @people.each do |person| %>
   <div class="person_business_card">
     <h1 class="text-center"><%= person.full_name.titleize %></h1>
