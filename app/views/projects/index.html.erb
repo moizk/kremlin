@@ -1,3 +1,4 @@
+<center><%= link_to new_user_project_path(current_user), class: "btn btn-red btn-mini"  do %><i class="fa fa-plus fa-3x"></i><% end %></center><br>
 <center>
     <% current_user.projects.each do |project| %>
         <div class="project-square <%= project.color %>">
