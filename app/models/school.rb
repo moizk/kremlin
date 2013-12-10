@@ -1,5 +1,5 @@
 class School < ActiveRecord::Base
-  attr_accessible :budget, :competitor_id, :facebook, :latitude, :longitude, :name, :newspaper, :private, :saf, :sga_facebook, :sga_twitter, :sga_website, :students, :twitter, :website, :wiki
+  attr_accessible :budget, :competitor_id, :facebook, :latitude, :longitude, :name, :newspaper, :private, :saf, :sga_facebook, :sga_twitter, :sga_website, :students, :twitter, :website, :wiki, :customer
   belongs_to :competitor
   has_many :people
 end

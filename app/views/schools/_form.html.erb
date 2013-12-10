@@ -59,6 +59,10 @@
     <%= f.text_field :longitude, placeholder: "Longitude" %>
   </div>
   <div class="field">
+    <%= f.label :customer, "Customer?" %>&nbsp;
+    <%= f.check_box :customer %>
+  </div>
+  <div class="field">
     <%= f.label :private, "Private School?" %>&nbsp;
     <%= f.check_box :private %>
   </div>
