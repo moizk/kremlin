@@ -173,7 +173,7 @@
   transition: background 300ms ease;
 }
 .btn-red:not(.active):hover {
-  background-color: #3e4b5d;
+  background-color: #111;
 }
 .btn-red:hover,
 .btn-red:active,
