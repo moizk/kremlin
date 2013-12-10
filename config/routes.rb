@@ -1,6 +1,12 @@
 Kremlin::Application.routes.draw do
 
 
+  resources :note_categories
+
+
+  resources :notes
+
+
   resources :people
 
 
@@ -31,6 +37,7 @@ Kremlin::Application.routes.draw do
     resources :projects do
       resources :project_entries
     end
+    resources :note_categories
   end
 
   root to: "projects#index"

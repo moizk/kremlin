@@ -1,0 +1,8 @@
+<center><%= link_to new_user_note_category_path(current_user), class: "btn btn-red btn-mini" do %> <i class="fa fa-plus fa-3x"></i> <% end %></center>
+
+<% @note_categories.each do |note_category| %>
+  <div class="note_category_tile">
+    <div class="note_category_title"><h5><%= link_to note_category.name, note_category %></h5></div>
+    <div class="note_category_image" style="background-image: url(<%= note_category.cover %>);"></div>
+  </div>
+<% end %>

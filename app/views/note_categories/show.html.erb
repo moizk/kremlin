@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @note_category.name %>
+</p>
+
+<p>
+  <b>Cover:</b>
+  <%= @note_category.cover %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @note_category.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_note_category_path(@note_category) %> |
+<%= link_to 'Back', note_categories_path %>
