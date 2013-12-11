@@ -24,7 +24,7 @@
         <% if entry.finish.blank? %>
         <%= link_to edit_user_project_project_entry_path(current_user, @project, entry) do %><i class="fa fa-check-circle-o icon-session-action fa-2x"></i> <% end %>
         <% else %>
-        <%= entry.finish %>
+        <%= entry.finish.strftime("%A at  %l:%M%P") %>
         <% end %>
       </td>
       <td numerical-value="<%= entry.start.to_i %>"><%= entry.start.strftime("%-m/%d/%y") %></td>
