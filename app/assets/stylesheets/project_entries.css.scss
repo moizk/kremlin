@@ -1,3 +1,26 @@
 // Place all the styles related to the Project_Entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.project-sessions-table {
+  max-width: 1020px;
+  margin: 0 auto 20px auto;
+  border: 1px solid #ccc;
+  thead {
+    background-color: #f44a56;
+    color: #fff;
+    th {
+      text-align: center;
+      a {
+        color: #fff;
+        transition: color 400ms ease-in;
+        &:hover {
+          color: #f1e577;
+        }
+      }
+    }
+  }
+  td {
+    border: 1px solid #ccc;
+  }
+}

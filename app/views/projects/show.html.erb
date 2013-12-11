@@ -8,23 +8,30 @@
   <%= link_to user_project_project_entries_path(current_user, @project), :method => :post, class: "btn btn-mini btn-green" do %><i class="fa fa-plus fa-2x"></i><% end %>
 </center>
 <br>
-<table class="table">
+<table class="table project-sessions-table kremlin-sortable">
   <thead>
     <tr>
-      <th>Start</th>
-      <th>End</th>
+      <th width="15%"><a href="#">Start</a></th>
+      <th width="15%"><a href="#">End</a></th>
+      <th width="10%"><a href="#">Date</a></th>
       <th>Comments</th>
-      <th>Actions</th>
     </tr>
   </thead>
 
-  <% @project.project_entries.each do |entry| %>
+  <% @project.project_entries.reverse.each do |entry| %>
     <tr>
-      <td><%= entry.start.strftime("%A at  %l:%M%P") %></td>
-      <td><% if entry.end.blank? %><%= link_to edit_user_project_project_entry_path(current_user, @project, entry) do %><i class="fa fa-check-circle-o icon-session-action fa-2x"></i> <% end %><% else %><%= entry.end.strftime("%A at  %l:%M%P") %><% end %></td>
-      <td><%= entry.comment %></td>
-      <td class="project-user-actions">
-        <%= link_to entry, method: :delete, data: { confirm: 'Are you sure?' } do %> <i class="fa fa-times-circle-o icon-session-action fa-2x"></i> <% end %>
+      <td numerical-value="<%= entry.start.to_i %>"><%= entry.start.strftime("%A at  %l:%M%P") %></td>
+      <td numerical-value="<%= entry.end.to_i %>">
+        <% if entry.end.blank? %>
+        <%= link_to edit_user_project_project_entry_path(current_user, @project, entry) do %><i class="fa fa-check-circle-o icon-session-action fa-2x"></i> <% end %>
+        <% else %>
+        <%= entry.end.strftime("%A at  %l:%M%P") %>
+        <% end %>
+      </td>
+      <td numerical-value="<%= entry.start.to_i %>"><%= entry.start.strftime("%-m/%d/%y") %></td>
+      <td>
+        <%= entry.comment %>
+        <%= link_to entry, method: :delete, data: { confirm: 'Are you sure?' } do %> <i class="fa fa-times-circle-o icon-session-action"></i> <% end %>
       </td>
     </tr>
   <% end %>
