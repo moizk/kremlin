@@ -16,7 +16,7 @@
     <%= f.text_area :comment, rows: 3 %>
   </div>
   <div class="field">
-    <%= f.hidden_field :end, class: "timepicker", value: "#{Time.now}" %>
+    <%= f.hidden_field :finish, class: "timepicker", value: "#{Time.now}" %>
   </div>
   <div class="actions nudge-down">
     <%= f.submit "Submit", class: "btn btn-red" %>

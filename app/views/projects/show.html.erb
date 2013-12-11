@@ -12,26 +12,29 @@
   <thead>
     <tr>
       <th width="15%"><a href="#">Start</a></th>
-      <th width="15%"><a href="#">End</a></th>
+      <th width="15%"><a href="#">Finish</a></th>
       <th width="10%"><a href="#">Date</a></th>
       <th>Comments</th>
     </tr>
   </thead>
-
   <% @project.project_entries.reverse.each do |entry| %>
     <tr>
       <td numerical-value="<%= entry.start.to_i %>"><%= entry.start.strftime("%A at  %l:%M%P") %></td>
-      <td numerical-value="<%= entry.end.to_i %>">
-        <% if entry.end.blank? %>
+      <td numerical-value="<%= entry.finish.to_i %>">
+        <% if entry.finish.blank? %>
         <%= link_to edit_user_project_project_entry_path(current_user, @project, entry) do %><i class="fa fa-check-circle-o icon-session-action fa-2x"></i> <% end %>
         <% else %>
-        <%= entry.end.strftime("%A at  %l:%M%P") %>
+        <%= entry.finish.strftime("%A at  %l:%M%P") %>
         <% end %>
       </td>
       <td numerical-value="<%= entry.start.to_i %>"><%= entry.start.strftime("%-m/%d/%y") %></td>
       <td>
+        <% if entry.finish.blank? %>
+        <% else %>
+        <b><%= number_to_currency(entry.duration * @project.hourly_rate_in_minutes, percision: 2) %></b> worth of work.<br>
         <%= entry.comment %>
         <%= link_to entry, method: :delete, data: { confirm: 'Are you sure?' } do %> <i class="fa fa-times-circle-o icon-session-action"></i> <% end %>
+        <% end %>
       </td>
     </tr>
   <% end %>

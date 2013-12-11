@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :color, :git_repo, :name, :user_id, :website
+  attr_accessible :color, :git_repo, :name, :user_id, :website, :hourly
 
   has_many :project_entries
   belongs_to :user
@@ -8,4 +8,8 @@ class Project < ActiveRecord::Base
    validates :name, presence: true
    validates :color, presence: true
    validates :website, presence: true
+
+  def hourly_rate_in_minutes
+    hourly / 60
+  end
 end
