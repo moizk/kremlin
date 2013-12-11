@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131210065638) do
+ActiveRecord::Schema.define(:version => 20131211231457) do
 
   create_table "competitors", :force => true do |t|
     t.string   "name"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20131210065638) do
     t.integer  "project_id"
     t.text     "comment"
     t.datetime "start"
-    t.datetime "end"
+    t.datetime "finish"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20131210065638) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.decimal  "hourly"
   end
 
   create_table "schools", :force => true do |t|
