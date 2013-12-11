@@ -12,11 +12,18 @@
 	margin-bottom: 15px;
 	padding-top: 65px;
 	display: inline-block;
-	background-color: #f44a56;
+	background-color: #111;
 	color: #fff;
 	-webkit-transition: background-color .8s ease-in-out;
 	   -moz-transition: background-color .8s ease-in-out;
 	        transition: background-color .8s ease-in-out;
+	@media only screen and (max-width: 640px) {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	&:hover {
+		background-color: #111;
+	}
 	h3 {
 		background-color: #fff;
 		color: #111;
@@ -32,8 +39,10 @@
 	a {
 		color: #fff;
 		opacity: .8;
+		transition: opacity 400ms ease-in-out;
 		&:hover {
 			opacity: 1;
+			text-decoration: none;
 		}
 	}
 	i {
@@ -42,35 +51,14 @@
 	}
 }
 
-
-@media only screen and (max-width: 640px) {
-	.project-square {
-		width: 100%;
-		margin-bottom: 20px;
-	}
-}
-
-.project-square:hover {
-	background-color: #b54322;
-
-}
-
-
-.project-square a:hover {
-	text-decoration: none;
-
-}
-
 .icon-session-action {
 	color: #000;
 	-webkit-transition: color .8s ease-in-out;
 	   -moz-transition: color .8s ease-in-out;
 	        transition: color .8s ease-in-out;
-
-}
-
-.icon-session-action:hover  {
-	color: #D84A35;
+	&:hover  {
+		color: #D84A35;
+	}
 }
 
 td.project-user-actions a:hover {
@@ -79,6 +67,8 @@ td.project-user-actions a:hover {
 }
 
 // Tile Colors
+
+.red { background-color: #454545; }
 
 .blue { background-color: #268bd2; }
 .blue:hover { background-color: #488AF7; }
@@ -89,7 +79,8 @@ td.project-user-actions a:hover {
 .pink { background-color: #ff237a; }
 .pink:hover { background-color: #d51d66; }
 
-.green { background-color: #2bcda9;}
+.green { background-color: #42ba5d;}
+.green:hover { background-color: #389d4f;}
 
 .orange { background-color: #F1783C; }
 
