@@ -96,6 +96,25 @@ div.navigation h1:hover {
           border-radius: 500px;
 }
 
+// Alerts and Error Notices
+
+div#error_explanation {
+  width: 318px;
+  margin: 0 auto 10px auto;
+  color: #fff;
+  background-color: #f44a56;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  h2 {
+    font-size: 1em;
+    color: #fff;
+  }
+  ul {
+    text-align: left;
+    padding-left: 45px;
+  }
+}
+
 div.alert-success {
   background-color: #2BCDA9;
   color: #FFF;
