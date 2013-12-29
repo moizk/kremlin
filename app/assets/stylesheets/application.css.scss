@@ -45,9 +45,16 @@ div.navigation {
   background: #f44a56;
   height: 130px;
   width: 100%;
+  @media screen and (width: 320px) {
+    height: auto;
+  }
   div.navinner {
+    text-align: center;
     img {
       margin: 15px;
+      @media screen and (width: 320px) {
+        margin: 15px 0;
+      }
     }
     ul {
       list-style: none;
