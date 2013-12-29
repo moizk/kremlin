@@ -35,7 +35,6 @@ class NoteCategoriesController < ApplicationController
 
   # GET /note_categories/1/edit
   def edit
-    @user = User.find(params[:user_id])
     @note_category = NoteCategory.find(params[:id])
   end
 
