@@ -4,7 +4,10 @@ gem 'rails', '3.2.13'
 
 # Login
 gem 'devise'
+# Authentication
+gem "cancan"
 
+gem 'pg'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -16,15 +19,11 @@ end
 gem 'jquery-rails'
 
 group :development do
-  gem 'sqlite3'
   gem "better_errors"
 end
 
 
-# For Heroku
-group :production do
- gem 'pg'
-end
+
 
 
 # To use ActiveModel has_secure_password
