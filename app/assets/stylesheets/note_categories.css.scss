@@ -2,14 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 div.note_category_tile {
   width: 300px;
   float: left;
-  margin-left: 15px;
-  &:nth-of-type(1) {
-    margin-left: 0;
-  }
+  margin-right: 15px;
   div.note_category_image {
     width: 300px;
     height: 200px;
