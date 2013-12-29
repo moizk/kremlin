@@ -49,7 +49,9 @@ div.navigation {
     height: auto;
   }
   div.navinner {
-    text-align: center;
+    @media screen and (width: 320px) {
+      text-align: center;
+    }
     img {
       margin: 15px;
       @media screen and (width: 320px) {
