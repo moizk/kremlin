@@ -33,7 +33,7 @@ Kremlin::Application.routes.draw do
     resources :note_categories
   end
 
-  root to: "projects#index"
+  root to: "note_categories#index"
 
 
   # The priority is based upon order of creation:
