@@ -2,35 +2,57 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.note_category_tile {
+div.note_category_container {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
   width: 300px;
-  float: left;
-  margin-right: 15px;
-  div.note_category_image {
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  input {
+    /* Positioning */
+    /* Box-model */
+    height: 50px;
     width: 300px;
-    height: 200px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+    /* Typography */
+    font-family: 'Source Code Pro', monospace;
+    /* Visual */
+    background-color: #333;
+    color: #ffcc66;
+    /* Misc */
   }
-  div.note_category_title {
+}
+
+h5.note_category_title {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 15px 0;
+    width: 300px;
+    /* Typography */
+    font-size: 1em;
     text-align: center;
-    h5 {
-      font-size: 1em;
-      padding: 15px 0;
-      margin-bottom: 0;
-      width: 300px;
-      background-color: #f44a56;
-      transition: all 400ms ease-in;
-      &:hover {
-        background-color: #111;
-      }
+    /* Visual */
+    background-color: #f44a56;
+    border-bottom: 1px solid #df4a37;
+    /* Misc */
+    transition: all 400ms ease-in-out;
+    &:hover {
+      background-color: #111;
     }
     a {
       color: #fff;
-      &:hover {
+      -webkit-transition: all 400ms ease-in-out;
+         -moz-transition: all 400ms ease-in-out;
+              transition: all 400ms ease-in-out;
+      &:focus {
+        color: #ffcc66;
+        font-weight: 800;
+        outline: none;
         text-decoration: none;
       }
     }
   }
-}
+
