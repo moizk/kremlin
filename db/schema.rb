@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131229051917) do
+ActiveRecord::Schema.define(:version => 20140206001513) do
 
   create_table "competitors", :force => true do |t|
     t.string   "name"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20131229051917) do
 
   create_table "note_categories", :force => true do |t|
     t.string   "name"
-    t.string   "cover"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
