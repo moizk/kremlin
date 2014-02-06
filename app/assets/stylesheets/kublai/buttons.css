@@ -111,6 +111,7 @@
 .btn-black:focus,
 .btn-purple:focus {
   outline: none;
+  background-color: #111;
 }
 
 /* =================
