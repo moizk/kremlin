@@ -7,10 +7,10 @@ $(function() {
       categorySearch = $('#note_category_filter').val().toLowerCase() ? $('#note_category_filter').val().toLowerCase() : "";
       noteCategory = $(this).data("name").toString().toLowerCase();
 
-      if (noteCategory.search(categorySearch)) {
-        $(this).hide();
-      } else {
+      if (noteCategory.match(categorySearch)) {
         $(this).show();
+      } else {
+        $(this).hide();
       }
     });
   });
