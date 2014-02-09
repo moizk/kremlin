@@ -52,12 +52,15 @@
   <div class="field">
     <%= collection_select(:school, :competitor_id, @competitors, :id, :name) %>
   </div>
+  <legend>Location</legend>
+  <div id="school_form_map"></div>
   <div class="field">
     <%= f.text_field :latitude, placeholder: "Latitude" %>
   </div>
   <div class="field">
     <%= f.text_field :longitude, placeholder: "Longitude" %>
   </div>
+  <legend>Yes/No</legend>
   <div class="field">
     <%= f.label :customer, "Customer?" %>&nbsp;
     <%= f.check_box :customer %>
