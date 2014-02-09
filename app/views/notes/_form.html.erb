@@ -18,6 +18,9 @@
     <%= f.text_field :url, placeholder: "URL" %>
   </div>
   <div class="field">
+    <%= f.text_area :thought, placeholder: "Thoughts", cols: "30", rows: "5" %>
+  </div>
+  <div class="field">
     <legend>Category</legend>
     <%= collection_select(:note, :note_category_id, @note_categories, :id, :name) %>
   </div>

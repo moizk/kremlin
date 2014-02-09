@@ -12,7 +12,8 @@
   <% end %>
   <% @note_category.notes.each do |note| %>
   <h3><%= link_to note.title, note.url, :target => "_blank" %></h3>
-<h5><%= note.user.full_name.titleize %> &middot; <%= note.created_at.strftime("%D") %> at <%= note.created_at.strftime("%I:%M%P") %> &middot; <%= link_to "Edit", edit_user_note_path(current_user, note) %></h5>
+  <h5><%= note.user.full_name.titleize %> &middot; <%= note.created_at.strftime("%D") %> at <%= note.created_at.strftime("%I:%M%P") %> &middot; <%= link_to "Edit", edit_user_note_path(current_user, note) %></h5>
+  <p><%= note.thought %></p>
   <hr>
   <% end %>
 </div>
