@@ -1,5 +1,5 @@
 <h1 class="text-center"><%= @note_category.name %></h1>
-<h5 class="text-center"><%= @note_category.user.full_name.titleize %></h5>
+<h4 class="text-center"><%= @note_category.user.full_name.titleize %></h4>
 <h5><center><%= link_to 'Edit', edit_user_note_category_path(@note_category), class: "text-center" %></center></h5>
 <center><%= link_to new_user_note_path(current_user), class: "btn btn-red" do %><i class="fa fa-plus fa-2x"></i> <% end %></center>
 
@@ -12,7 +12,7 @@
   <% end %>
   <% @note_category.notes.each do |note| %>
   <h3><%= link_to note.title, note.url, :target => "_blank" %></h3>
-  <h5><%= note.user.full_name.titleize %></h5>
+<h5><%= note.user.full_name.titleize %> &middot; <%= note.created_at.strftime("%D") %> at <%= note.created_at.strftime("%I:%M%P") %> &middot; <%= link_to "Edit", edit_user_note_path(current_user, note) %></h5>
   <hr>
   <% end %>
 </div>

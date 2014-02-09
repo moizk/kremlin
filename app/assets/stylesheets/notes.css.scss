@@ -4,13 +4,40 @@
 
 
 div.notes_container {
-  background-color: #fff;
-  max-width: 420px;
-  border: 1px solid #ccc;
-  padding: 25px;
+  /* Positioning */
+  /* Box-model */
   margin: 15px auto;
-  h3, h5 {
+  max-width: 320px;
+  padding: 25px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  /* Misc */
+  h3 {
     margin-top: 0;
     margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    a {
+      color: #121821;
+      -webkit-transition: all 400ms ease-in-out;
+         -moz-transition: all 400ms ease-in-out;
+              transition: all 400ms ease-in-out;
+
+      &:hover {
+        color: #df4a37;
+      }
+    }
+  }
+  h5 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #a6aebb;
+    a {
+      color: #a6aebb;
+      font-weight: 800;
+    }
   }
 }
