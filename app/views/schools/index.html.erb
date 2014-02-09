@@ -16,7 +16,7 @@
     </div>
     <h4><%= number_with_delimiter(school.students) %> Students</h4>
     <center><%= link_to "Wiki", school.wiki, class: "btn btn-green btn-mini" %></center><br>
-    <h3 class="text-center">Student Government</h3>
+    <h3 class="text-center" id="sga">Student Government</h3>
     <div class="fa-row row">
       <div class="col-xs-4">
         <%= link_to school.sga_website do %><i class="fa fa-globe"></i><% end %>
@@ -30,11 +30,17 @@
     </div>
     <h4><%= number_to_currency(school.budget, precision: 0) %></h4>
     <center><%= link_to "Paper", school.newspaper, class: "btn btn-mini btn-green" %></center>
-    <hr>
-    <center>
-    <%= link_to 'Edit', edit_school_path(school), class: "btn btn-yellow btn-mini" %>
-    <%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-red btn-mini" %>
-    </center>
+    <div class="fa-row row">
+      <div class="col-xs-4">
+        <%= link_to school do %><i class="fa fa-bullseye"></i><% end %>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to edit_school_path(school) do %><i class="fa fa-cog"></i><% end %>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to school, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-times-circle-o"></i><% end %>
+      </div>
+    </div>
   </div>
   <% end %>
 </div>

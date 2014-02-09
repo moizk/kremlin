@@ -9,8 +9,9 @@ div.school_cards_container {
 		margin-left: 10px;
 		border: 1px solid #ccc;
 		max-width: 320px;
+		min-width: 220px;
 		background-color: #fff;
-		padding-bottom: 30px;
+		padding-bottom: 10px;
 		@media screen and (max-width: 320px) {
 			margin-left: 0;
 			margin-right: 0;
@@ -27,6 +28,10 @@ div.school_cards_container {
 			border-top: 1px solid #268bd2;
 			border-bottom: 1px solid #268bd2;
 			transition: all 0.4s ease-in;
+			&#sga {
+				background-color: #795aac;
+				border-color: #795aac;
+			}
 			&:hover {
 				background-color: #42ba5d;
 				border-color: #42ba5d;
@@ -50,8 +55,8 @@ div.school_cards_container {
 
 div.fa-row {
 	text-align: center;
+	padding-top: 10px;
 	padding-bottom: 10px;
-	border-bottom: 1px solid #ccc;
 	margin-left: 0;
 	margin-right: 0;
 	a {
