@@ -5,13 +5,13 @@
     <h3 class="text-center"><%= link_to school.name, school %></h3>
     <div class="fa-row row">
       <div class="col-xs-4">
-        <%= link_to school.website do %><i class="fa fa-globe"></i><% end %>
+        <%= link_to school.website, target: "_blank" do %><i class="fa fa-globe"></i><% end %>
       </div>
       <div class="col-xs-4">
-        <%= link_to school.facebook do %><i class="fa fa-facebook"></i><% end %>
+        <%= link_to school.facebook, target: "_blank" do %><i class="fa fa-facebook"></i><% end %>
       </div>
       <div class="col-xs-4">
-        <%= link_to school.twitter do %><i class="fa fa-twitter"></i><% end %>
+        <%= link_to school.twitter, target: "_blank" do %><i class="fa fa-twitter"></i><% end %>
       </div>
     </div>
     <h4><%= number_with_delimiter(school.students) %> Students</h4>
@@ -19,13 +19,13 @@
     <h3 class="text-center" id="sga">Student Government</h3>
     <div class="fa-row row">
       <div class="col-xs-4">
-        <%= link_to school.sga_website do %><i class="fa fa-globe"></i><% end %>
+        <%= link_to school.sga_website, target: "_blank" do %><i class="fa fa-globe"></i><% end %>
       </div>
       <div class="col-xs-4">
-        <%= link_to school.sga_facebook do %><i class="fa fa-facebook"></i><% end %>
+        <%= link_to school.sga_facebook, target: "_blank" do %><i class="fa fa-facebook"></i><% end %>
       </div>
       <div class="col-xs-4">
-        <%= link_to school.sga_twitter do %><i class="fa fa-twitter"></i><% end %>
+        <%= link_to school.sga_twitter, target: "_blank" do %><i class="fa fa-twitter"></i><% end %>
       </div>
     </div>
     <h4><%= number_to_currency(school.budget, precision: 0) %></h4>
