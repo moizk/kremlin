@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
-  database: kremlin_development
+  database: kremlin_february
   host: localhost
   username: moizkmalik
   password:
