@@ -30,9 +30,6 @@ function schoolformInitialize() {
     map.panTo(ev.latLng);
   });
 
-  var transitLayer = new google.maps.TransitLayer();
-  transitLayer.setMap(map);
-
 }
 
 google.maps.event.addDomListener(window, 'load', schoolformInitialize);
