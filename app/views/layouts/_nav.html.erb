@@ -5,7 +5,6 @@
     <ul>
       <li><%= link_to "Notes", user_note_categories_path(current_user) %></li>
       <li><a href="/schools">Schools</a></li>
-      <li><a href="/projects">Projects</a></li>
       <li><a href="/people">People</a></li>
       <li><small><%= link_to users_path do %><i class="fa fa-circle"></i></small><% end %></li>
       <li><small><%= link_to destroy_user_session_path, :method => :delete do %><i class="fa fa-power-off"></i></small><% end %></li>
