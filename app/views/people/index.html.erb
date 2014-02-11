@@ -8,14 +8,13 @@
     <h4 class="text-center"><%= person.school.name %></h4>
     <hr>
     <div class="row text-center">
-      <div class="col-xs-6">
-        <i class="fa fa-phone fa-2x"></i><br>
-        <%= number_to_phone person.phone %>
-      </div>
-      <div class="col-xs-6">
-        <i class="fa  fa-envelope-o fa-2x"></i><br>
-        <%= person.email %>
-      </div>
+      <i class="fa fa-phone fa-2x"></i><br>
+      <%= number_to_phone person.phone %><br>
+    </div>
+    <br>
+    <div class="row text-center">
+      <i class="fa  fa-envelope-o fa-2x"></i><br>
+      <%= person.email %>
     </div>
     <hr>
     <legend>Social</legend>
@@ -30,12 +29,17 @@
         <%= link_to person.linkedin do %><i class="fa fa-linkedin"></i><% end %>
       </div>
     </div>
-    <div class="text-center">
-      <br>
-      <%= link_to 'Edit', edit_person_path(person), class: "btn btn-yellow btn-mini" %>
-      <%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-red btn-mini' %>
+    <div class="row fa-row">
+      <div class="col-xs-4">
+        <%= link_to person.school do %><i class="fa fa-book"></i> <% end %>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to edit_person_path(person) do %><i class="fa fa-cog"></i> <% end %>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to person, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-times-circle-o"></i><% end %>
+      </div>
     </div>
-      <br>
   </div>
   <% end %>
 </div>
