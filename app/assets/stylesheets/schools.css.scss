@@ -35,8 +35,9 @@ div.school_cards_container {
 			border-bottom: 1px solid #268bd2;
 			transition: all 0.4s ease-in;
 			&#sga {
-				background-color: #795aac;
-				border-color: #795aac;
+				color: #111;
+				background-color: #fff;
+				border-color: #fff;
 			}
 			&:hover {
 				background-color: #42ba5d;

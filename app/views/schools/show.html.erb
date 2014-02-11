@@ -15,7 +15,7 @@
   <br>
   <center><%= link_to "Wiki", @school.wiki, class: "btn btn-green btn-mini" %></center>
   <br>
-  <h4><b><%= @school.students %></b><br><small>Undergraduate Students</small></h4>
+  <h4><b><%= number_with_delimiter(@school.students) %></b><br><small>Undergraduate Students</small></h4>
   <h4><b><%= number_to_currency(@school.saf) %></b><br><small>Student Activity Fee</small></h4>
   <h4><b><%= number_to_currency(@school.budget, precision: 0) %></b><br><small>SGA Budget</small></h4>
   <h3 class="text-center">Student Government</h3>
@@ -28,6 +28,18 @@
     </div>
     <div class="col-xs-4">
       <%= link_to @school.sga_twitter do %><i class="fa fa-twitter"></i><% end %>
+    </div>
+  </div>
+  <hr>
+  <div class="fa-row row">
+    <div class="col-xs-4">
+      <%= link_to @school do %><i class="fa fa-bullseye"></i><% end %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to edit_school_path(@school) do %><i class="fa fa-cog"></i><% end %>
+    </div>
+    <div class="col-xs-4">
+      <%= link_to @school, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="fa fa-times-circle-o"></i><% end %>
     </div>
   </div>
   <br>
