@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div#school_index_map {
+	height: 500px;
+}
+
 div.school_cards_container {
 	text-align: center;
 	div.school_card {
