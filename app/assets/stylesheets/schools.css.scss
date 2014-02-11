@@ -4,6 +4,7 @@
 
 div#school_index_map {
 	height: 500px;
+	margin-bottom: 20px;
 }
 
 div.school_cards_container {
@@ -13,7 +14,7 @@ div.school_cards_container {
 		margin-left: 10px;
 		border: 1px solid #ccc;
 		max-width: 320px;
-		min-width: 220px;
+		min-width: 250px;
 		background-color: #fff;
 		padding-bottom: 10px;
 		@media screen and (max-width: 320px) {
