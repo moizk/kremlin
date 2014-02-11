@@ -7,7 +7,7 @@ function initialize() {
   var markers;
   var moizApartment = new google.maps.LatLng(40.722736512395284, -73.93933206796646)
   var mapOptions = {
-    zoom: 7,
+    zoom: 5,
     center: moizApartment,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
