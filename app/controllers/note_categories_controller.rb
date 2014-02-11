@@ -3,7 +3,8 @@ class NoteCategoriesController < ApplicationController
   # GET /note_categories
   # GET /note_categories.json
   def index
-    @note_categories = NoteCategory.all
+    @user = User.find(params[:user_id])
+    @note_categories = @user.note_categories.all
 
     respond_to do |format|
       format.html # index.html.erb
