@@ -4,7 +4,7 @@
   <% @people.each do |person| %>
   <div class="person_business_card">
     <h1 class="text-center"><%= person.full_name.titleize %></h1>
-    <h5 class="text-center"><%= person.title %></h5>
+    <h5 class="text-center" title="<%= person.title %>"><%= truncate(person.title, length: 40) %></h5>
     <h4 class="text-center"><%= person.school.name %></h4>
     <hr>
     <div class="row text-center">
