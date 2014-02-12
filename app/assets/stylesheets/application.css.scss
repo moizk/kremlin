@@ -156,3 +156,22 @@ a:hover {
   text-decoration: none !important;
 }
 
+// Home Page
+
+div.main_quote {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  padding: 10px;
+  width: 300px;
+  /* Typography */
+  font-family: 'Georgia', serif;
+  text-align: center;
+  /* Visual */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  /* Misc */
+  p {
+    font-size: 20px;
+  }
+}
