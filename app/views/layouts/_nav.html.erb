@@ -1,7 +1,11 @@
 <div class="navigation">
   <div class="navinner">
     <% if user_signed_in? %>
+    <% if current_user.admin? %>
+    <%= link_to schools_path do %><%= image_tag 'kremlinstar.png', class: "img-circle" %><% end %>
+    <% else %>
     <%= link_to root_path do %><%= image_tag 'kremlinstar.png', class: "img-circle" %><% end %>
+    <% end %>
     <ul>
       <li><%= link_to "Notes", user_note_categories_path(current_user) %></li>
       <li><a href="/schools">Schools</a></li>
