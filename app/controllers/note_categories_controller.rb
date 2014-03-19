@@ -44,7 +44,7 @@ class NoteCategoriesController < ApplicationController
   # POST /note_categories.json
   def create
     @user = User.find(params[:user_id])
-    @note_category = @user.note_categories.new(params[:note_category])
+    @note_category = @user.note_categories.new(note_category_params)
 
     respond_to do |format|
       if @note_category.save
@@ -64,7 +64,7 @@ class NoteCategoriesController < ApplicationController
     @note_category = NoteCategory.find(params[:id])
 
     respond_to do |format|
-      if @note_category.update_attributes(params[:note_category])
+      if @note_category.update_attributes(note_category_params)
         format.html { redirect_to @note_category, notice: 'Note category was successfully updated.' }
         format.json { head :no_content }
       else
@@ -84,5 +84,12 @@ class NoteCategoriesController < ApplicationController
       format.html { redirect_to note_categories_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def note_category_params
+    params.require(:note_category)
+          .permit(:name, :user_id)
   end
 end
