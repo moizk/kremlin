@@ -67,7 +67,7 @@ class ProjectEntriesController < ApplicationController
     @project_entry = ProjectEntry.find(params[:id])
 
     respond_to do |format|
-      if @project_entry.update_attributes(params[:project_entry])
+      if @project_entry.update_attributes(project_entry_params)
         format.html { redirect_to @project, notice: 'Project entry was successfully updated.' }
         format.json { head :no_content }
       else
@@ -87,5 +87,12 @@ class ProjectEntriesController < ApplicationController
       format.html { redirect_to root_path }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def project_entry_params
+    params.require(:project_entry)
+          .permit(:comment, :finish, :project_id, :start)
   end
 end
