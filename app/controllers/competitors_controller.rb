@@ -41,7 +41,7 @@ class CompetitorsController < ApplicationController
   # POST /competitors
   # POST /competitors.json
   def create
-    @competitor = Competitor.new(params[:competitor])
+    @competitor = Competitor.new(competitor_params)
 
     respond_to do |format|
       if @competitor.save
@@ -60,7 +60,7 @@ class CompetitorsController < ApplicationController
     @competitor = Competitor.find(params[:id])
 
     respond_to do |format|
-      if @competitor.update_attributes(params[:competitor])
+      if @competitor.update_attributes(competitor_params)
         format.html { redirect_to @competitor, notice: 'Competitor was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,5 +80,12 @@ class CompetitorsController < ApplicationController
       format.html { redirect_to competitors_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def competitor_params
+    params.require(:competitor)
+          .permit(:facebook, :name, :twitter, :website)
   end
 end
