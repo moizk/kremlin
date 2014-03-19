@@ -9,6 +9,6 @@ class Project < ActiveRecord::Base
    validates :website, presence: true
 
   def hourly_rate_in_minutes
-    hourly / 60
+    hourly.to_f / 60
   end
 end
