@@ -1,5 +1,5 @@
 class NoteCategoriesController < ApplicationController
-  load_and_authorize_resource
+  authorize_resource
   # GET /note_categories
   # GET /note_categories.json
   def index

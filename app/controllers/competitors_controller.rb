@@ -1,5 +1,5 @@
 class CompetitorsController < ApplicationController
-  load_and_authorize_resource
+  authorize_resource
   # GET /competitors
   # GET /competitors.json
   def index
