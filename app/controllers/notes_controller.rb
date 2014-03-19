@@ -46,7 +46,7 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @user = User.find(params[:user_id])
-    @note = @user.notes.new(params[:note])
+    @note = @user.notes.new(note_params)
 
     respond_to do |format|
       if @note.save
@@ -66,7 +66,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
 
     respond_to do |format|
-      if @note.update_attributes(params[:note])
+      if @note.update_attributes(note_params)
         format.html { redirect_to @note.note_category, notice: 'Note was successfully updated.' }
         format.json { head :no_content }
       else
@@ -86,5 +86,12 @@ class NotesController < ApplicationController
       format.html { redirect_to notes_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def note_params
+    params.require(:note)
+          .permit(:title, :url, :user_id, :note_category_id, :thought)
   end
 end
