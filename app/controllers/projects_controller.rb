@@ -47,7 +47,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @user = User.find(params[:user_id])
-    @project = @user.projects.new(params[:project])
+    @project = @user.projects.new(project_params)
 
 
     respond_to do |format|
@@ -68,7 +68,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     respond_to do |format|
-      if @project.update_attributes(params[:project])
+      if @project.update_attributes(project_params)
         format.html { redirect_to @user, notice: 'Project was successfully updated.' }
         format.json { head :no_content }
       else
@@ -88,5 +88,12 @@ class ProjectsController < ApplicationController
       format.html { redirect_to projects_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def project_params
+    params.require(:project)
+          .permit(:color, :git_repo, :name, :user_id, :website, :hourly)
   end
 end
