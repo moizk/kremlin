@@ -60,7 +60,7 @@ class NoteCategoriesController < ApplicationController
   # PUT /note_categories/1
   # PUT /note_categories/1.json
   def update
-    @user = User.find(params[:user_id])
+    @user = current_user
     @note_category = NoteCategory.find(params[:id])
 
     respond_to do |format|
