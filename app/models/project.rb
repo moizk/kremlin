@@ -1,5 +1,4 @@
 class Project < ActiveRecord::Base
-  attr_accessible :color, :git_repo, :name, :user_id, :website, :hourly
 
   has_many :project_entries
   belongs_to :user

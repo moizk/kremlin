@@ -9,9 +9,6 @@ class User < ActiveRecord::Base
   has_many :notes
   has_many :note_categories
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :title, :company, :location
-
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :title, :presence => true
