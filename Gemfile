@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.1.0"
 
 gem 'rails', '4.0.3'
 
@@ -21,8 +22,8 @@ group :development do
 end
 
 
-
-
+# Gem for Heroku Assets
+gem 'rails_12factor'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
