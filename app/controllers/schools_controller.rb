@@ -43,7 +43,7 @@ class SchoolsController < ApplicationController
   # POST /schools
   # POST /schools.json
   def create
-    @school = School.new(params[:school])
+    @school = School.new(school_params)
 
     respond_to do |format|
       if @school.save
@@ -62,7 +62,7 @@ class SchoolsController < ApplicationController
     @school = School.find(params[:id])
 
     respond_to do |format|
-      if @school.update_attributes(params[:school])
+      if @school.update_attributes(school_params)
         format.html { redirect_to @school, notice: 'School was successfully updated.' }
         format.json { head :no_content }
       else
@@ -82,5 +82,12 @@ class SchoolsController < ApplicationController
       format.html { redirect_to schools_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def school_params
+    params.require(:school)
+          .permit(:budget, :competitor_id, :facebook, :latitude, :longitude, :name, :newspaper, :private, :saf, :sga_facebook, :sga_twitter, :sga_website, :students, :twitter, :website, :wiki, :customer, :anchor_school)
   end
 end
