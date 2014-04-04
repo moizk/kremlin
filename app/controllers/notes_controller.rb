@@ -26,8 +26,8 @@ class NotesController < ApplicationController
   # GET /notes/new.json
   def new
     @user = User.find(params[:user_id])
-    @note_categories = NoteCategory.all
     @note = Note.new
+    @note.note_category_id = params[:note_category_id]
 
     respond_to do |format|
       format.html # new.html.erb
