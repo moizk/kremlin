@@ -38,6 +38,9 @@ div.formcontainer {
   text-align: center;
   padding: 20px 0 20px 0;
   border: 1px solid #eee;
+  input {
+    width: 75%;
+  }
 }
 
 div.navigation {
