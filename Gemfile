@@ -22,8 +22,9 @@ group :development do
 end
 
 
-# Gem for Heroku Assets
-gem 'rails_12factor'
+group :production do
+  gem 'rails_12factor'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
