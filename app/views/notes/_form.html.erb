@@ -20,6 +20,11 @@
   <div class="field">
     <%= f.text_area :thought, placeholder: "Thoughts", cols: "30", rows: "5" %>
   </div>
+  <br>
+  <div class="field">
+    <%= f.label :purchased, "Purchased?" %><br>
+    <%= f.check_box :purchased %>
+  </div>
       <%= f.hidden_field :note_category_id %>
   <div class="actions">
     <br>
