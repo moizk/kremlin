@@ -1,31 +1,8 @@
-<h1>Listing notes</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Url</th>
-    <th>User</th>
-    <th>Ip address</th>
-    <th>User agent</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @notes.each do |note| %>
-  <tr>
-    <td><%= note.title %></td>
-    <td><%= note.url %></td>
-    <td><%= note.user_id %></td>
-    <td><%= note.ip_address %></td>
-    <td><%= note.user_agent %></td>
-    <td><%= link_to 'Show', note %></td>
-    <td><%= link_to 'Edit', edit_note_path(note) %></td>
-    <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Note', new_user_note_path(current_user) %>
+<div class="notes_container">
+  <% @notes.each do |note| %>
+    <h3><%= link_to note.title, note.url, :target => "_blank" %></h3>
+    <h5><%= note.user.full_name.titleize %> &middot; <%= note.created_at.strftime("%D") %> at <%= note.created_at.strftime("%I:%M%P") %></h5>
+    <p><%= note.thought %></p>
+    <hr>
+  <% end %>
+</div>
