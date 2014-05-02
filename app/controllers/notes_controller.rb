@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  authorize_resource
+  skip_authorization_check :only => [:index]
   # GET /notes
   # GET /notes.json
   def index
@@ -7,7 +7,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @notes }
+      format.atom
     end
   end
 
